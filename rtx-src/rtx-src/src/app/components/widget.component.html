@@ -1,0 +1,29 @@
+<div class="col-lg-6">
+    <div class="card">
+      <div class="card-header">
+        <i class="fa fa-align-justify"></i> Widgets
+      </div>
+      <div class="card-body">
+        <table class="table">
+          <thead >
+            <tr >
+              <th >Id</th>
+              <th >Summary</th>
+              <th >Type ID</th>
+              <th >Unit Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let widget of widgets">
+              <td>{{widget.widgetId}}</td>
+              <td>{{widget.summary}}</td>
+              <td>{{widget.widgetTypeId}}</td>
+              <td>{{widget.unitPrice}}</td>
+
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+    </div>
+  </div>

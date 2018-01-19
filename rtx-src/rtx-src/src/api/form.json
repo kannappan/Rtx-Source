@@ -1,0 +1,50 @@
+{
+  "label": [
+    {
+      "labelcompany": "Company"
+    },
+    {
+      "labelweb": "WebSite"
+    },
+    {
+      "labelstreet": "Street"
+    },
+    {
+      "labelcity": "City"
+    },
+    {
+      "labelpostal": "Postal Code"
+    },
+    {
+      "labelcountry": "Country"
+    }
+  ],
+  "detail": [
+    {
+      "label": "Company"
+    },
+    {
+      "label": "City"
+    },
+    {
+      "label": "WebSite"
+    },
+    {
+      "label": "Country"
+    },
+    {
+      "label": "Postal Code"
+    }
+  ],
+  "form": [
+    {
+      "company": "Google",
+      "web": "google.com",
+      "street": "test",
+      "city": "test",
+      "postal": "123456",
+      "country": "India",
+      "id": 1
+    }
+  ]
+}

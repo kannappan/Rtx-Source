@@ -1,0 +1,57 @@
+{
+
+  "menu": [
+    {
+      "id": 1,
+      "menuname": "Components",
+      "submenu": [
+        {
+          "id": 1,
+          "menuname": "Forms",
+          "url": "/components/forms"
+        },
+        {
+          "id": 2,
+          "menuname": "Company Details",
+          "url": "/components/details"
+        },
+        {
+          "id": 5,
+          "menuname": "Widgets",
+          "url": "/components/widgets"
+        },
+        {
+          "id": 4,
+          "menuname": "Modals",
+          "url": "/components/modals"
+        },
+        {
+          "id": 5,
+          "menuname": "Tables",
+          "url": "/components/tables"
+        }
+
+      ]
+    },
+    {
+      "id": 2,
+      "menuname": "Icons",
+      "submenu": [
+        {
+          "id": 1,
+          "menuname": "Line Icons",
+          "url": "/icons/simple-line-icons"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "menuname": "Widgets"
+    },
+    {
+      "id": 4,
+      "menuname": "Charts"
+    }
+  ]
+
+}

@@ -1,0 +1,26 @@
+<div class="col-lg-6 formcenter">
+    <div class="card">
+      <div class="card-header">
+        <i class="fa fa-align-justify"></i> Company Details
+      </div>
+      <div class="card-body">
+        <table class="table">
+          <thead >
+            <tr >
+              <th *ngFor=" let label of labeldetails">{{label.label}}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor=" let detail of details">
+              <td>{{detail.company}}</td>
+              <td>{{detail.city}}</td>
+              <td>{{detail.web}}</td>
+              <td>{{detail.country}}</td>
+              <td>{{detail.postal}}</td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+    </div>
+  </div>

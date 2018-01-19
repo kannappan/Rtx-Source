@@ -1,0 +1,41 @@
+import { Component,OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Http } from '@angular/http'
+import { LoginService} from './login.service';
+
+@Component({
+  templateUrl: 'login.component.html',
+  styleUrls: ['login.component.css']
+})
+
+export class LoginComponent  implements OnInit{
+
+  username:any[];
+  user_name:any[];
+  password:any[];
+  pass_word: any[];
+
+  constructor( private router : Router, private loginservice : LoginService , private http: Http) { }
+
+  clickLogin(e,emailAddress,password){
+
+    if(emailAddress=='test' && password== 'test'){
+    e.preventDefault() ;
+
+    let body = { emailAddress, password};
+
+    this.http.post('http://localhost:3001/api/authorization/login', body).subscribe(
+      response => {
+
+        console.log(response);
+      });
+
+        this.router.navigate(['dashboard'])
+    }else{
+
+      alert("Invalid Credentials! ")
+    }
+}
+
+ngOnInit(){}
+}
