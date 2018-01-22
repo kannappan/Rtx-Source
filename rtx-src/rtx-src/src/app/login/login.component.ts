@@ -10,17 +10,12 @@ import { LoginService} from './login.service';
 
 export class LoginComponent  implements OnInit{
 
-  username:any[];
-  user_name:any[];
-  password:any[];
-  pass_word: any[];
-
   constructor( private router : Router, private loginservice : LoginService , private http: Http) { }
 
   clickLogin(e,emailAddress,password){
+    e.preventDefault() ;
 
     if(emailAddress=='test' && password== 'test'){
-    e.preventDefault() ;
 
     let body = { emailAddress, password};
 
@@ -28,9 +23,11 @@ export class LoginComponent  implements OnInit{
       response => {
 
         console.log(response);
-      });
 
+        this.loginservice.setUserLoggedIn();        
         this.router.navigate(['dashboard'])
+      });
+     
     }else{
 
       alert("Invalid Credentials! ")
@@ -38,4 +35,5 @@ export class LoginComponent  implements OnInit{
 }
 
 ngOnInit(){}
+
 }

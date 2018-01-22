@@ -1,11 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Pipe, PipeTransform  } from '@angular/core';
 import { Http } from '@angular/http';
-import { CoreService } from '../services/core.service'
+import { CoreService } from '../services/core.service';;
+import { DetailPipe } from './detail.pipe';
 
 @Component({
   templateUrl: 'detail.component.html',
-  styleUrls:['/detail.component.css']
+  styleUrls:['/detail.component.css'],
+  
 })
+
 export class DetailComponent implements OnInit {
 
   details:any[];
@@ -36,5 +39,11 @@ export class DetailComponent implements OnInit {
   
   }
 
+  key: string = 'company'; //set default
+  reverse: boolean = false;
+  sort(key){
+    this.key = key;
+    this.reverse = !this.reverse;
+  }
 
 }

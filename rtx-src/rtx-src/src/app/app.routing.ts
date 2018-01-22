@@ -3,6 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { FullLayoutComponent } from './layouts/full-layout.component';
 import { SimpleLayoutComponent } from './layouts/simple-layout.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { LoginComponent } from './login/login.component'
 
 import { AuthGuard } from './shared/auth.guard'
 
@@ -12,31 +14,16 @@ export const routes: Routes = [
     redirectTo: 'login',
     pathMatch: 'full'
   },
-  {
-    path: '',
-    component: SimpleLayoutComponent,
-    data: {
-      title: 'Home'
-    },
-    children: [
+  {path: 'login',component:LoginComponent},
+  {path: '',loadChildren: './pages/pages.module#PagesModule',},
 
-      {
-        path: 'login',
-        loadChildren: './login/login.module#LoginModule'
-      },
-      {
-        path: '',
-        loadChildren: './pages/pages.module#PagesModule',
-      },
-    ]
-  },
   {
     path: '',
     component: FullLayoutComponent,
-    //canActivate: [AuthGuard],
     data: {
       title: 'Home'
     },
+    canActivate: [AuthGuard],
     children: [
 
       {
@@ -45,6 +32,7 @@ export const routes: Routes = [
       },
       {
         path: 'components',
+
         loadChildren: './components/components.module#ComponentsModule'
       },
       {

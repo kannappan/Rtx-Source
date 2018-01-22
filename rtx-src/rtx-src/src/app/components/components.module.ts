@@ -1,5 +1,6 @@
-import { NgModule } from '@angular/core';
+import { NgModule , Pipe, PipeTransform } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { ButtonsComponent } from './buttons.component';
 import { CardsComponent } from './cards.component';
@@ -23,7 +24,8 @@ import { TabsComponent } from './tabs.component';
 
 // Components Routing
 import { ComponentsRoutingModule } from './components-routing.module';
-import { WidgComponent } from './widget.component'
+import { WidgComponent } from './widget.component';
+import { DetailPipe } from './detail.pipe';
 
 @NgModule({
   imports: [
@@ -31,7 +33,8 @@ import { WidgComponent } from './widget.component'
     BsDropdownModule.forRoot(),
     ModalModule.forRoot(),
     TabsModule,
-    CommonModule    
+    CommonModule,
+    FormsModule
   ],
   declarations: [
     ButtonsComponent,
@@ -43,7 +46,8 @@ import { WidgComponent } from './widget.component'
     SwitchesComponent,
     TablesComponent,
     TabsComponent,
-    WidgComponent
+    WidgComponent,
+    DetailPipe,
   ]
 })
 export class ComponentsModule { }

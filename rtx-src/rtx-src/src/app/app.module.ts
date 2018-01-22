@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { HttpModule } from '@angular/http'
 
 import { AppComponent } from './app.component';
@@ -13,19 +12,15 @@ import { SIDEBAR_TOGGLE_DIRECTIVES } from './shared/sidebar.directive';
 import { AsideToggleDirective } from './shared/aside.directive';
 import { BreadcrumbsComponent } from './shared/breadcrumb.component';
 
-// Routing Module
 import { AppRoutingModule } from './app.routing';
-
-// Layouts
 import { FullLayoutComponent } from './layouts/full-layout.component';
 import { SimpleLayoutComponent } from './layouts/simple-layout.component';
 
-//service
 import { CoreService } from './services/core.service';
 import { LoginService } from './login/login.service';
 
-//guard
 import { AuthGuard } from './shared/auth.guard';
+import { LoginComponent } from './login/login.component'
 
 @NgModule({
   imports: [
@@ -38,6 +33,7 @@ import { AuthGuard } from './shared/auth.guard';
   ],
   declarations: [
     AppComponent,
+    LoginComponent,
     FullLayoutComponent,
     SimpleLayoutComponent,
     NAV_DROPDOWN_DIRECTIVES,
@@ -45,11 +41,7 @@ import { AuthGuard } from './shared/auth.guard';
     SIDEBAR_TOGGLE_DIRECTIVES,
     AsideToggleDirective,
   ],
-  providers: [{
-    provide: LocationStrategy,
-    useClass: HashLocationStrategy
-  },
-  CoreService,LoginService,AuthGuard],
+  providers: [ CoreService,LoginService,AuthGuard],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }

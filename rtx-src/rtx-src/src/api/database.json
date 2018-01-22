@@ -7,7 +7,7 @@
       "submenu": [
         {
           "id": 1,
-          "menuname": "Forms",
+          "menuname": "Company Form",
           "url": "/components/forms"
         },
         {

@@ -4,6 +4,7 @@ import { CoreService } from '../services/core.service'
 
 @Component({
   templateUrl: 'widget.component.html',
+  styleUrls:['/widget.component.css']
 })
 export class WidgComponent implements OnInit {
 
@@ -17,7 +18,7 @@ export class WidgComponent implements OnInit {
             this.widgets=res;
           
             // console.log(res)
-            // console.log(this.widgets)
+             //console.log(this.widgets)
           });
   
   }

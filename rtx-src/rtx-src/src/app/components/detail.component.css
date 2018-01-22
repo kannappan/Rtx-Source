@@ -5,3 +5,17 @@
 .formcenter{
     margin: 0 auto;
 }
+
+.form-search{
+    width: 30%;
+    margin-top: 1px;
+    margin-left: 5px;
+    float: right;
+    height: 20%;
+    border: none;
+    border-radius: 4px;
+}
+
+.icon-right{
+    float: right;
+}

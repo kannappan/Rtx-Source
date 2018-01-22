@@ -10,6 +10,9 @@ import { Http } from '@angular/http'
 export class FormsComponent implements OnInit {
 
 labels:any[];
+
+model: any = {};
+
   constructor(private service : CoreService, private http: Http) { }
 
   ngOnInit(){
@@ -19,17 +22,14 @@ labels:any[];
   });
 }
 
-  submitData(company,web,street,city,postal,country){
+submit(){
+  //console.log('Data submitted: ', this.model);
 
-    let body = { company,web,street,city,postal,country };
+  this.http.post('http://localhost:3003/form', this.model).subscribe(
+    response => {
 
-    this.http.post('http://localhost:3003/form', body).subscribe(
-      response => {
-
-        //console.log(response);
-      });
-
-    // this.service.postForm(this.formdata).subscribe(data=>console.log(this.newdata=data))
-  }
+      //console.log(response);
+    });
+}
 
 }

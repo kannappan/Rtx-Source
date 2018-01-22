@@ -1,22 +1,28 @@
 {
   "label": [
     {
-      "labelcompany": "Company"
+      "label": "Company",
+      "modelname": "company"
     },
     {
-      "labelweb": "WebSite"
+      "label": "WebSite",
+      "modelname": "web"
     },
     {
-      "labelstreet": "Street"
+      "label": "Street",
+      "modelname": "street"
     },
     {
-      "labelcity": "City"
+      "label": "City",
+      "modelname": "city"
     },
     {
-      "labelpostal": "Postal Code"
+      "label": "Postal Code",
+      "modelname": "postal"
     },
     {
-      "labelcountry": "Country"
+      "label": "Country",
+      "modelname": "country"
     }
   ],
   "detail": [
@@ -45,6 +51,15 @@
       "postal": "123456",
       "country": "India",
       "id": 1
+    },
+    {
+      "company": "Yahoo",
+      "web": "www.yahoo.com",
+      "street": "Chennai",
+      "city": "Chennai",
+      "postal": "600001",
+      "country": "India",
+      "id": 2
     }
   ]
 }
