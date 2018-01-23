@@ -1,25 +1,21 @@
 <div class="col-lg-6 formcenter">
     <div class="card">
       <div class="card-header">
-        <i class="fa fa-align-justify"></i> Company Details
-
-        <input type="text" [(ngModel)]="searchText" 
-        class="form-search" placeholder="Search By Company" />
-        <i class="icon-magnifier icons font-2xl d-block icon-right "></i>    
+        <i class="fa fa-align-justify"></i> Company Details         
       </div>
       <div class="card-body">
-      
-          
+          <input type="text" [(ngModel)]="searchText" 
+          class="form-search" placeholder="Search By Company" />
+          <i class="icon-magnifier icons font-2xl d-block icon-right "></i> 
         <table class="table">
           <thead >
             <tr >
-              <th *ngFor=" let label of labeldetails" (click)="sort('company')">{{label.label}}
-                  <i class="fa fa-sort" *ngIf="key =='company'" [ngClass]="{'fa fa-sort-asc':reverse,'fa fa-sort-desc':!reverse}" ></i>
+              <th *ngFor=" let label of labeldetails" (click)="sort('label.modelname')">{{label.label}}
               </th>
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor=" let detail of details| detail: searchText">
+            <tr *ngFor=" let detail of details| detail: searchText | orderBy: key : reverse; let i = index">
               <td >{{detail.company}}</td>
               <td>{{detail.city}}</td>
               <td>{{detail.web}}</td>

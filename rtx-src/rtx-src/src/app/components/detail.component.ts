@@ -39,7 +39,7 @@ export class DetailComponent implements OnInit {
   
   }
 
-  key: string = 'company'; //set default
+  key: string = '{{label.modelname}}'; 
   reverse: boolean = false;
   sort(key){
     this.key = key;

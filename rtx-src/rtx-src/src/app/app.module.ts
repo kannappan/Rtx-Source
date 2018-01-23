@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpModule } from '@angular/http'
+import { HttpModule } from '@angular/http';
+import { FormsModule } from '@angular/forms';
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 
 import { AppComponent } from './app.component';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
@@ -20,7 +22,8 @@ import { CoreService } from './services/core.service';
 import { LoginService } from './login/login.service';
 
 import { AuthGuard } from './shared/auth.guard';
-import { LoginComponent } from './login/login.component'
+import { LoginComponent } from './login/login.component';
+
 
 @NgModule({
   imports: [
@@ -29,7 +32,8 @@ import { LoginComponent } from './login/login.component'
     BsDropdownModule.forRoot(),
     TabsModule.forRoot(),
     ChartsModule,
-    HttpModule
+    HttpModule,
+    FormsModule
   ],
   declarations: [
     AppComponent,
@@ -40,8 +44,12 @@ import { LoginComponent } from './login/login.component'
     BreadcrumbsComponent,
     SIDEBAR_TOGGLE_DIRECTIVES,
     AsideToggleDirective,
+
   ],
-  providers: [ CoreService,LoginService,AuthGuard],
+  providers: [{
+    provide: LocationStrategy,
+    useClass: HashLocationStrategy
+  }, CoreService,LoginService,AuthGuard],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }

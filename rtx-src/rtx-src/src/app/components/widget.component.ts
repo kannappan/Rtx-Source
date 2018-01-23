@@ -23,5 +23,11 @@ export class WidgComponent implements OnInit {
   
   }
 
+  key: string = 'widgetTypeId,summary,unitPrice,widgetId'; 
+  reverse: boolean = false;
+  sort(key){
+    this.key = key;
+    this.reverse = !this.reverse;
+  }
 
 }

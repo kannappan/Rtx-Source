@@ -5,20 +5,8 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class LoginService {
 
-  constructor(private http: Http) {
-    this.isUserLoggedIn=false;
-  }
-  
-  private isUserLoggedIn;
-  
-  setUserLoggedIn(){
-       this.isUserLoggedIn=true;
-     }
-  
-  getUserLoggedIn(){
-       return this.isUserLoggedIn;
-     }
-
+  constructor(private http: Http) {}
+    
   private url:string ="http://localhost:3002/login"
 
   getDetails(){

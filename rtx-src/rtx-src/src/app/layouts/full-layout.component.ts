@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
+import { Router } from '@angular/router'
 import { CoreService } from '../services/core.service';
 
 @Component({
@@ -9,7 +10,9 @@ import { CoreService } from '../services/core.service';
 export class FullLayoutComponent implements OnInit {
  menus: any[];
  submenus:any[];
-  constructor(private http: Http, private service: CoreService){}
+ token:string;
+ 
+   constructor(private http: Http, private service: CoreService, private router: Router){}
 
   public disabled = false;
   public status: {isopen: boolean} = {isopen: false};
@@ -31,6 +34,11 @@ export class FullLayoutComponent implements OnInit {
       //console.log(res)
 
       });
+  }
 
+  logout(){
+    localStorage.removeItem('currentUser');
+    this.token = null;
+    this.router.navigate(['/login']);
   }
 }

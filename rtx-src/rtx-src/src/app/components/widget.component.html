@@ -7,14 +7,14 @@
         <table class="table">
           <thead >
             <tr >
-              <th >Id</th>
-              <th >Summary</th>
-              <th >Type ID</th>
-              <th >Unit Price</th>
+              <th (click)="sort('widgetId')">Id</th>
+              <th (click)="sort('summary')">Summary</th>
+              <th (click)="sort('widgetTypeId')">Type ID</th>
+              <th (click)="sort('unitPrice')">Unit Price</th>
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let widget of widgets">
+            <tr *ngFor="let widget of widgets| orderBy: key : reverse; let i = index">
               <td>{{widget.widgetId}}</td>
               <td>{{widget.summary}}</td>
               <td>{{widget.widgetTypeId}}</td>
