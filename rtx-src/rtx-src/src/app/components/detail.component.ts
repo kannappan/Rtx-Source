@@ -27,21 +27,23 @@ export class DetailComponent implements OnInit {
       this.service.getLabels().subscribe(res=>{
         this.labels=res;
     
-        //console.log(res)
+        console.log(res)
   
         });
 
         this.service.getlabelDetails().subscribe(res=>{
           this.labeldetails=res;
         
-          //console.log(res)
+         // console.log(this.labeldetails)
         });
   
   }
 
-  key: string = '{{label.modelname}}'; 
+  key: string = ''; 
+
   reverse: boolean = false;
   sort(key){
+    console.log(key)
     this.key = key;
     this.reverse = !this.reverse;
   }

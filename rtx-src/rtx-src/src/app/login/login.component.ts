@@ -15,8 +15,7 @@ export class LoginComponent  implements OnInit{
 checkLogin(){
   if (localStorage.getItem('currentUser')) {
     this.router.navigate(['/dashboard'])
-}
-
+  }
 }
 
   clickLogin(e,emailAddress,password){
